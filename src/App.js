@@ -11,6 +11,7 @@ import Login from './components/Login/Login';
 import Shipment from './components/Shipment/Shipment';
 import { createContext } from 'react';
 import { useState } from 'react';
+import PriavateRouter from './components/PrivateRouter/PriavateRouter';
 
 export const UserContext = createContext();
 
@@ -24,9 +25,9 @@ function App() {
           <Switch>
             <Route exact path="/shop" component={Shop}/>
             <Route exact path="/review" component={Review}/>
-            <Route exact path="/inventory" component={Inventory}/>
+            <PriavateRouter exact path="/inventory" component={Inventory}/>
             <Route exact path="/login" component={Login}/>
-            <Route exact path="/shipment" component={Shipment}/>
+            <PriavateRouter exact path="/shipment" component={Shipment}/>
             <Route exact path="/" component={Shop}/>
             <Route exact path="/product/:productKey" component={ProductDetail}/>
             <Route exact path="*" component={NotFound}/>
